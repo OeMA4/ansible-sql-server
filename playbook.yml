@@ -1,0 +1,27 @@
+#
+---
+- hosts: winserver
+  gather_facts: yes
+  remote_user: root
+  tasks:
+  - name: Install IIS
+    win_feature:
+      name: "Web-Server"
+      state: present
+      restart: yes
+      include_sub_features: yes
+      include_management_tools: yes
+  
+  - win_service:
+      name: aspnet_state
+      start_mode: auto
+      state: started
+  
+  - name: Download & Extract SQL Installer
+    win_sqlserver:
+      state: present
+
+  - name: Run (restart) IIS Webserver
+    win_iisrestart: 
+      stop: "net stop w3svc"
+      start: "net start w3svc"

@@ -1,0 +1,1 @@
+sudo apt-get -yy upgrade python python-dev python-pip gcc

@@ -1,0 +1,2 @@
+call them via `ansible winserver -m moduleName`
+or with arguments `ansible winserver -m moduleName -a "argument1=foo"`
