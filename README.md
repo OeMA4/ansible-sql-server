@@ -1,2 +1,6 @@
 # ANSIBLE: INSTALL MYSQL SERVER
-Whilhilhl
+Important files: 
+/library/win_sqlserver.ps1
+/library/downloadFile.ps1
+/library/win_iisrestart.ps1
+
